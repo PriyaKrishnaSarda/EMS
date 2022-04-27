@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<table class="table table-dark table-striped">
+  <tr>
+    <th>Employee-Id</th>
+    <th>Employee-Name</th>
+    <th>Employee-Email</th>
+    <th>Employee-Contact</th>
+    <th>Update Employee</th>
+    <th>Delete Employee</th>
+  </tr>
+  {% for i in employee %}
+  <tr>
+    <td>{{i.eid}}</td>
+    <td>{{i.ename}}</td>
+    <td>{{i.eemail}}</td>
+    <td>{{i.econtact}}</td>
+    <td>
+        <a href="edit/{{i.id}}">Edit</a>
+    </td>
+    <td>
+        <a href="delete/{{i.id}}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
